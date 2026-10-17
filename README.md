@@ -71,6 +71,7 @@ The section appears after the first run with the mod.
 | `LeftTriggerGain` | `1.0` | 0 = off, 1 = default, up to 2 (same as the in-game slider) |
 | `RightTriggerGain` | `1.0` | 0 = off, 1 = default, up to 2 (same as the in-game slider) |
 | `DebugLog` | `false` | Log every haptic event and trigger change to `MelonLoader/Latest.log` |
+| `PerfLog` | `false` | Every 10 s, log the game's fps, worst frame, and the mod's own cost per frame |
 
 Gains above 1.0 make weaker effects stronger. Effects already at full strength stay at full.
 
