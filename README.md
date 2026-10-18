@@ -13,11 +13,8 @@ small motors behind the triggers, using the haptic events the game already produ
 It's modelled on [TriggerFX](https://www.nexusmods.com/overthehill/mods/1) (DualSense
 adaptive triggers), which hooks the same game events.
 
-**Status:** works on Linux (Proton, wired Xbox Series X|S controller, Steam Input on).
-
-> **Untested on Windows.** It should work there through the same Steam Input call,
-> probably with Steam's extended Xbox controller support driver turned on (see
-> [Platforms](#platforms)), but nobody has tried it yet. Reports welcome.
+**Status:** works on Linux (Proton, wired Xbox Series X|S controller, Steam Input on)
+and on Windows, in single player and online multiplayer.
 
 ## What you need
 
@@ -29,7 +26,7 @@ adaptive triggers), which hooks the same game events.
       set up first. Linux's stock driver can't run the trigger motors at all.
 
 Then follow the guide for your system:
-[Linux](#setup-on-linux-steam--proton) or [Windows](#setup-on-windows-untested).
+[Linux](#setup-on-linux-steam--proton) or [Windows](#setup-on-windows).
 
 ---
 
@@ -132,11 +129,7 @@ Done. You only do all this once. Next time, just start the game.
 
 ---
 
-## Setup on Windows (untested)
-
-> Nobody has tried this on Windows yet. The steps are what *should* work. If you try
-> it, please [open an issue](https://github.com/kaleLetendre/over-the-hill-trigger-rumble/issues)
-> and say whether the triggers worked, and whether you needed Step 2.
+## Setup on Windows
 
 ### Step 1: Turn on Steam Input for the game
 
@@ -291,7 +284,7 @@ reaches the controller.
 |---|---|---|
 | Mod loader | MelonLoader + `WINEDLLOVERRIDES="version=n,b"` launch option | MelonLoader, no launch option needed |
 | Trigger path today | Steam Input `TriggerVibrationExtended` → Steam's SDL over libusb | Same call; Steam forwards it to the controller |
-| Host setup | [xbox-trigger-rumble](https://github.com/kaleLetendre/xbox-trigger-rumble) `on` mode + Steam Input enabled | Steam Input enabled for the game, plus most likely Steam's extended Xbox controller support driver (Steam → Settings → Controller; needs a driver install and a reboot). Valve added it in 2021 for trigger rumble. *Untested.* |
+| Host setup | [xbox-trigger-rumble](https://github.com/kaleLetendre/xbox-trigger-rumble) `on` mode + Steam Input enabled | Steam Input enabled for the game, plus most likely Steam's extended Xbox controller support driver (Steam → Settings → Controller; needs a driver install and a reboot). Valve added it in 2021 for trigger rumble. Tested and working on Windows (2026-10-18). |
 | Without Steam Input | No controller at all in `on` mode | Planned fallback: Windows.Gaming.Input `Gamepad.Vibration` (has `LeftTrigger`/`RightTrigger`), which Windows supports natively for Xbox controllers |
 
 Planned structure, so the second backend is a drop-in:

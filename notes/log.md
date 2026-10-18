@@ -40,3 +40,7 @@
   frames only during loading.
 - The v0.2.0 session logged 2790 NREs (two per frame while the settings rows existed, each
   with an IL2CPP stack trace), which costs real frame time. 0.2.1 and 0.2.2 sessions: 0.
+
+## 2026-10-18: Windows and multiplayer confirmed
+
+A Windows friend ran the mod in an online session hosted by the user on Linux; the trigger rumble works for them. README: Windows and multiplayer marked tested. Whether Steam's extended Xbox controller support driver was needed on their side is not known.
